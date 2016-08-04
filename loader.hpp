@@ -2,10 +2,9 @@
 #define LOADER_HPP
 
 #include <QtNetwork>
+#include "parser.hpp"
 
 namespace loader{
-
-class Parser;
 
 class Loader : public QObject
 {
@@ -24,7 +23,7 @@ private slots:
 private:
     QNetworkAccessManager m_network_manager;
     QNetworkReply* m_folder_reply;
-    Parser m_parser;
+    parser::Parser m_parser;
 };
 
 }

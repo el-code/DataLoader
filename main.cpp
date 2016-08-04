@@ -13,8 +13,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     loader::Loader load;
-    load.load_main_folder(QUrl(args[1]));
-    load.print_status();
+    load.load(QUrl(args[1]));
 
     return a.exec();
 }

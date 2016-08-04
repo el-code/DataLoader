@@ -18,9 +18,8 @@ void Loader::load(const QUrl& folder_url)
 
 void Loader::OnDownloadFolder(QNetworkReply* )
 {
-    QString folder(m_folder_reply->readAll());
-    qDebug() << "\n" << folder;
     std::cout << "Downloaded" << std::endl;
+    m_parser.parse(*m_folder_reply);
 }
 
 void Loader::print_status()

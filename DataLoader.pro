@@ -10,8 +10,10 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    loader.cpp
+    loader.cpp \
+    parser.cpp
 
 HEADERS += \
-    loader.hpp
+    loader.hpp \
+    parser.hpp
 

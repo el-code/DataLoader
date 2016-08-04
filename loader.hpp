@@ -5,13 +5,18 @@
 
 namespace loader{
 
+class Parser;
+
 class Loader : public QObject
 {
     Q_OBJECT
 public:
     Loader();
     void print_status();
-    void load_main_folder(const QUrl& folder_url);
+    void load(const QUrl& folder_url);
+
+private:
+    QStringList get_files() const;
 
 private slots:
     void OnDownloadFolder(QNetworkReply*);
@@ -19,6 +24,7 @@ private slots:
 private:
     QNetworkAccessManager m_network_manager;
     QNetworkReply* m_folder_reply;
+    Parser m_parser;
 };
 
 }

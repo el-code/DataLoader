@@ -23,11 +23,6 @@ Parser::FileList Parser::parse(QIODevice &dev) const
             pos += reg.matchedLength();
     }
 
-    for(auto elem : files)
-    {
-        std::cout << elem.toStdString() << std::endl;
-    }
-
     return files;
 }
 

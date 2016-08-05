@@ -8,7 +8,7 @@ namespace loader
 
 Loader::Loader()
 {
-    connect(&m_network_manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(OnDownloadFile(QNetworkReply*)));
+
 }
 
 void Loader::load(const QUrl& folder_url)
@@ -26,6 +26,8 @@ void Loader::OnDownloadFolder()
     {
         m_urls.push_back(QUrl("http://ftp.moex.com" + elem));
     }
+    connect(&m_network_manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(OnDownloadFile(QNetworkReply*)));
+    download_files();
 }
 
 void Loader::download_files()

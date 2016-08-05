@@ -16,14 +16,17 @@ public:
 
 private:
     QStringList get_files() const;
+    void download_files();
 
 private slots:
-    void OnDownloadFolder(QNetworkReply*);
+    void OnDownloadFolder();
+    void OnDownloadFile(QNetworkReply*);
 
 private:
     QNetworkAccessManager m_network_manager;
     QNetworkReply* m_folder_reply;
     parser::Parser m_parser;
+    QQueue<QUrl> m_urls;
 };
 
 }

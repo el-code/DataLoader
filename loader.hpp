@@ -21,10 +21,12 @@ private:
 private slots:
     void OnDownloadFolder();
     void OnDownloadFile(QNetworkReply*);
+    void OnDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void OnError(QNetworkReply::NetworkError code);
 
 private:
     QNetworkAccessManager m_network_manager;
-    QNetworkReply* m_folder_reply;
+    QNetworkReply* m_folder_reply, *m_curr_download;
     parser::Parser m_parser;
     QQueue<QUrl> m_urls;
 };

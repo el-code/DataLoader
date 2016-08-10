@@ -9,6 +9,10 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
+INCLUDEPATH += /home/artur/boost_1_61_0
+
+LIBS += -L/home/artur/boost_1_61_0/stage/lib -lboost_system
+
 SOURCES += main.cpp \
     loader.cpp \
     parser.cpp

@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
         return 1;
     }
     loader::Loader load;
-    load.load(QUrl(args[1]));
 
     return a.exec();
 }

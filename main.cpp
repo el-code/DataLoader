@@ -12,7 +12,13 @@ int main(int argc, char *argv[])
         std::cerr << "usage: DataLoader <url to ftp folder>" << std::endl;
         return 1;
     }
-    loader::Loader load;
+    boost::asio::io_service io_service;
+
+    loader::Loader load(io_service);
+
+    load.load(argv[1]);
+
+    io_service.run();
 
     return a.exec();
 }

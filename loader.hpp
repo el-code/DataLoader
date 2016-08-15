@@ -29,6 +29,8 @@ private:
     boost::asio::ip::tcp::resolver m_resolver;
     boost::asio::ip::tcp::socket m_socket;
     std::string m_server, m_path;
+    boost::asio::streambuf m_request;
+    boost::asio::streambuf m_reply;
 };
 
 }
